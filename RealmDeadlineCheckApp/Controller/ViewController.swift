@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
+    let viewDesigns = ViewDesigns()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        viewDesigns.viewControllerDesign(viewController: self.view)
     }
 
 

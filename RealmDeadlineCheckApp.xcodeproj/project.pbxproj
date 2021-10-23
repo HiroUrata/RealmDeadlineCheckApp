@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,14 @@
 		547D5BAC271FA8C400120472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAA271FA8C400120472 /* Main.storyboard */; };
 		547D5BAE271FA8C600120472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAD271FA8C600120472 /* Assets.xcassets */; };
 		547D5BB1271FA8C600120472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAF271FA8C600120472 /* LaunchScreen.storyboard */; };
+		547D5BFE2723B90700120472 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BFD2723B90700120472 /* NavigationController.swift */; };
+		547D5C002723B96600120472 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BFF2723B96600120472 /* TabBarController.swift */; };
+		547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C012723B9B300120472 /* ViewDesigns.swift */; };
+		E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25DE0A644024822B6E0D1D42 /* Pods-RealmDeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
 		547D5BA1271FA8C400120472 /* RealmDeadlineCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDeadlineCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D5BA4271FA8C400120472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547D5BA6271FA8C400120472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,11 @@
 		547D5BAD271FA8C600120472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547D5BB0271FA8C600120472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		547D5BB2271FA8C600120472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547D5BFD2723B90700120472 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		547D5BFF2723B96600120472 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		547D5C012723B9B300120472 /* ViewDesigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesigns.swift; sourceTree = "<group>"; };
+		72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
+		CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		105C102BB2FFE0FFEEA134CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		547D5B98271FA8C400120472 = {
 			isa = PBXGroup;
 			children = (
 				547D5BA3271FA8C400120472 /* RealmDeadlineCheckApp */,
 				547D5BA2271FA8C400120472 /* Products */,
+				A94DDB978925AB61FB7E3930 /* Pods */,
+				105C102BB2FFE0FFEEA134CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +79,49 @@
 			children = (
 				547D5BA4271FA8C400120472 /* AppDelegate.swift */,
 				547D5BA6271FA8C400120472 /* SceneDelegate.swift */,
-				547D5BA8271FA8C400120472 /* ViewController.swift */,
-				547D5BAA271FA8C400120472 /* Main.storyboard */,
-				547D5BAD271FA8C600120472 /* Assets.xcassets */,
+				547D5BBA271FA96600120472 /* Model */,
+				547D5BB9271FA96000120472 /* View */,
+				547D5BB8271FA95800120472 /* Controller */,
 				547D5BAF271FA8C600120472 /* LaunchScreen.storyboard */,
 				547D5BB2271FA8C600120472 /* Info.plist */,
 			);
 			path = RealmDeadlineCheckApp;
+			sourceTree = "<group>";
+		};
+		547D5BB8271FA95800120472 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				547D5BA8271FA8C400120472 /* ViewController.swift */,
+				547D5BFD2723B90700120472 /* NavigationController.swift */,
+				547D5BFF2723B96600120472 /* TabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		547D5BB9271FA96000120472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				547D5BAA271FA8C400120472 /* Main.storyboard */,
+				547D5BAD271FA8C600120472 /* Assets.xcassets */,
+				547D5C012723B9B300120472 /* ViewDesigns.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		547D5BBA271FA96600120472 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A94DDB978925AB61FB7E3930 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25DE0A644024822B6E0D1D42 /* Pods-RealmDeadlineCheckApp.debug.xcconfig */,
+				72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 547D5BB5271FA8C600120472 /* Build configuration list for PBXNativeTarget "RealmDeadlineCheckApp" */;
 			buildPhases = (
+				039E90B0293818F37A8DB8DF /* [CP] Check Pods Manifest.lock */,
 				547D5B9D271FA8C400120472 /* Sources */,
 				547D5B9E271FA8C400120472 /* Frameworks */,
 				547D5B9F271FA8C400120472 /* Resources */,
+				3C3B2F899510C15B9EF005D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +191,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		039E90B0293818F37A8DB8DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealmDeadlineCheckApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C3B2F899510C15B9EF005D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		547D5B9D271FA8C400120472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
 				547D5BA9271FA8C400120472 /* ViewController.swift in Sources */,
+				547D5BFE2723B90700120472 /* NavigationController.swift in Sources */,
 				547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */,
+				547D5C002723B96600120472 /* TabBarController.swift in Sources */,
 				547D5BA7271FA8C400120472 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +387,7 @@
 		};
 		547D5BB6271FA8C600120472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25DE0A644024822B6E0D1D42 /* Pods-RealmDeadlineCheckApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,12 +400,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeadlineCheck.RealmDeadlineCheckApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		547D5BB7271FA8C600120472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,7 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeadlineCheck.RealmDeadlineCheckApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
