@@ -16,6 +16,7 @@
 		547D5BFE2723B90700120472 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BFD2723B90700120472 /* NavigationController.swift */; };
 		547D5C002723B96600120472 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BFF2723B96600120472 /* TabBarController.swift */; };
 		547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C012723B9B300120472 /* ViewDesigns.swift */; };
+		547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C032726EFDC00120472 /* RegisterDatas.swift */; };
 		E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		547D5BFD2723B90700120472 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		547D5BFF2723B96600120472 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		547D5C012723B9B300120472 /* ViewDesigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesigns.swift; sourceTree = "<group>"; };
+		547D5C032726EFDC00120472 /* RegisterDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDatas.swift; sourceTree = "<group>"; };
 		72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		547D5BBA271FA96600120472 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				547D5C032726EFDC00120472 /* RegisterDatas.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
+				547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */,
 				547D5BA9271FA8C400120472 /* ViewController.swift in Sources */,
 				547D5BFE2723B90700120472 /* NavigationController.swift in Sources */,
 				547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */,
