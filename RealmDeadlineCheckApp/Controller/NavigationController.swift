@@ -14,9 +14,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         
-        navigationBar.tintColor = .systemRed
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.rectangle.on.rectangle.fill"), style: .done, target: self, action:                                                   #selector(moveToSearchView))
+
         
         
         

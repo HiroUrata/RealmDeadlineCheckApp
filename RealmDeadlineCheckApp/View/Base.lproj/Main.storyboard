@@ -11,7 +11,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RealmDeadlineCheckApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TodayViewController" customModule="RealmDeadlineCheckApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,6 +24,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1631.8840579710147" y="105.80357142857143"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="IWn-XM-jt5">
+            <objects>
+                <viewController id="okN-Cr-g1q" customClass="SearchViewController" customModule="RealmDeadlineCheckApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ghd-vr-Do3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Kgz-lK-oWP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="dDK-Lw-7to"/>
+                    <navigationItem key="navigationItem" id="BlQ-4f-D7f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pVS-aF-QR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631.8840579710147" y="829.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Kx-4P-Fwv">
@@ -50,11 +67,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IWF-dw-hhY"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RQz-NJ-cJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eva-uY-HtU"/>
+                        <segue destination="okN-Cr-g1q" kind="relationship" relationship="viewControllers" id="eZ8-oh-g8r"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Foc-b3-TVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

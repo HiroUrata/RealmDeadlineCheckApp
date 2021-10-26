@@ -10,10 +10,18 @@ import UIKit
 
 class ViewDesigns{
     
-    func viewControllerDesign(viewController:UIView){
+    let haikeiImageView = UIImageView(image: UIImage(named: "haikei01"))
+    
+    func todayViewViewControllerDesign(todayView:UIView){
         
-        let haikeiImageView = UIImageView(frame: viewController.frame)
-        haikeiImageView.image = UIImage(named: "haikei01")
-        viewController.addSubview(haikeiImageView)
+        haikeiImageView.frame = todayView.frame
+        todayView.addSubview(haikeiImageView)
     }
+    
+    func searchViewControllerDesign(searchView:UIView){
+        
+        haikeiImageView.frame = searchView.frame
+        searchView.addSubview(haikeiImageView)
+    }
+    
 }

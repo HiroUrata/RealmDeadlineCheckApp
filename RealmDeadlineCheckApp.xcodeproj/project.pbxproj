@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA4271FA8C400120472 /* AppDelegate.swift */; };
 		547D5BA7271FA8C400120472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA6271FA8C400120472 /* SceneDelegate.swift */; };
-		547D5BA9271FA8C400120472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA8271FA8C400120472 /* ViewController.swift */; };
+		547D5BA9271FA8C400120472 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA8271FA8C400120472 /* TodayViewController.swift */; };
 		547D5BAC271FA8C400120472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAA271FA8C400120472 /* Main.storyboard */; };
 		547D5BAE271FA8C600120472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAD271FA8C600120472 /* Assets.xcassets */; };
 		547D5BB1271FA8C600120472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D5BAF271FA8C600120472 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		547D5C002723B96600120472 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BFF2723B96600120472 /* TabBarController.swift */; };
 		547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C012723B9B300120472 /* ViewDesigns.swift */; };
 		547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C032726EFDC00120472 /* RegisterDatas.swift */; };
+		547D5C0827279D4D00120472 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C0727279D4D00120472 /* SearchViewController.swift */; };
 		E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +26,7 @@
 		547D5BA1271FA8C400120472 /* RealmDeadlineCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDeadlineCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D5BA4271FA8C400120472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547D5BA6271FA8C400120472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		547D5BA8271FA8C400120472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		547D5BA8271FA8C400120472 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		547D5BAB271FA8C400120472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		547D5BAD271FA8C600120472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547D5BB0271FA8C600120472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		547D5BFF2723B96600120472 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		547D5C012723B9B300120472 /* ViewDesigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesigns.swift; sourceTree = "<group>"; };
 		547D5C032726EFDC00120472 /* RegisterDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDatas.swift; sourceTree = "<group>"; };
+		547D5C0727279D4D00120472 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,7 +95,8 @@
 		547D5BB8271FA95800120472 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				547D5BA8271FA8C400120472 /* ViewController.swift */,
+				547D5BA8271FA8C400120472 /* TodayViewController.swift */,
+				547D5C0727279D4D00120472 /* SearchViewController.swift */,
 				547D5BFD2723B90700120472 /* NavigationController.swift */,
 				547D5BFF2723B96600120472 /* TabBarController.swift */,
 			);
@@ -243,7 +246,8 @@
 			files = (
 				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
 				547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */,
-				547D5BA9271FA8C400120472 /* ViewController.swift in Sources */,
+				547D5C0827279D4D00120472 /* SearchViewController.swift in Sources */,
+				547D5BA9271FA8C400120472 /* TodayViewController.swift in Sources */,
 				547D5BFE2723B90700120472 /* NavigationController.swift in Sources */,
 				547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */,
 				547D5C002723B96600120472 /* TabBarController.swift in Sources */,
