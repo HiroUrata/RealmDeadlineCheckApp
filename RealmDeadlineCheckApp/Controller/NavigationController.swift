@@ -12,18 +12,9 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-
-        
-        
+   
         
     }
     
-    @objc func moveToSearchView(){
-        
-        
-    }
-
-
+   
 }

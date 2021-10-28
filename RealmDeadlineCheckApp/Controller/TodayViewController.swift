@@ -14,7 +14,9 @@ class TodayViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewDesigns.todayViewViewControllerDesign(todayView: self.view)
+        print("TodayViewController")
+        
+        //viewDesigns.todayViewViewControllerDesign(todayView: self.view)
     }
 
 

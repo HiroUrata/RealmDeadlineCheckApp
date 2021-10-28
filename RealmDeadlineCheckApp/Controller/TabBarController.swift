@@ -13,7 +13,10 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         setnavigationBarItem()
-        setTabItem()
+        
+        tabBar.tintColor = .black
+        tabBar.unselectedItemTintColor = .tertiarySystemGroupedBackground
+        tabBar.barTintColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
         
     }
     
@@ -26,21 +29,15 @@ class TabBarController: UITabBarController {
     
     func setnavigationBarItem(){
         
-        navigationController?.navigationBar.tintColor = .blue
+        navigationController?.navigationBar.tintColor = UIColor(red: 1.0, green: 0.40, blue: 0.51, alpha: 1.0)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.rectangle.on.rectangle.fill"), style: .done, target: self, action: #selector(moveToSearchView))
         
     }
     
-    func setTabItem(){
-        
-        let todayViewController = TodayViewController()
-        todayViewController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "clock.fill"), tag: 0)
-        
-        let searchViewController = SearchViewController()
-        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
-        
-        viewControllers = [todayViewController,searchViewController]
-        
-    }
+   
 
 }
+
+
+
+

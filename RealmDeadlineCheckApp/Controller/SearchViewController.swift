@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewDesigns.searchViewControllerDesign(searchView: self.view)
+        //viewDesigns.searchViewControllerDesign(searchView: self.view)
       
     }
     
