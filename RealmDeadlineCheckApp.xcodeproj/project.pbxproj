@@ -20,6 +20,8 @@
 		547D5C0827279D4D00120472 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C0727279D4D00120472 /* SearchViewController.swift */; };
 		547D5C0A27283A8800120472 /* RealmCRUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C0927283A8800120472 /* RealmCRUDModel.swift */; };
 		5499F33B272B864F00EE2BB9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5499F33A272B864F00EE2BB9 /* Alert.swift */; };
+		5499F346272B9E1A00EE2BB9 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5499F344272B9E1A00EE2BB9 /* CustomCell.swift */; };
+		5499F347272B9E1A00EE2BB9 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5499F345272B9E1A00EE2BB9 /* CustomCell.xib */; };
 		E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		547D5C0727279D4D00120472 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		547D5C0927283A8800120472 /* RealmCRUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCRUDModel.swift; sourceTree = "<group>"; };
 		5499F33A272B864F00EE2BB9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5499F344272B9E1A00EE2BB9 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		5499F345272B9E1A00EE2BB9 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,10 +102,9 @@
 		547D5BB8271FA95800120472 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				547D5BA8271FA8C400120472 /* TodayViewController.swift */,
-				547D5C0727279D4D00120472 /* SearchViewController.swift */,
 				547D5BFD2723B90700120472 /* NavigationController.swift */,
 				547D5BFF2723B96600120472 /* TabBarController.swift */,
+				5499F33C272B8E6000EE2BB9 /* TabBarItemControllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,6 +112,7 @@
 		547D5BB9271FA96000120472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5499F343272B9DEA00EE2BB9 /* TableViewCell */,
 				5499F338272B85C500EE2BB9 /* StoryboardAndAssets */,
 				5499F339272B85FC00EE2BB9 /* ViewSwifFile */,
 			);
@@ -149,6 +153,24 @@
 				5499F33A272B864F00EE2BB9 /* Alert.swift */,
 			);
 			path = ViewSwifFile;
+			sourceTree = "<group>";
+		};
+		5499F33C272B8E6000EE2BB9 /* TabBarItemControllers */ = {
+			isa = PBXGroup;
+			children = (
+				547D5BA8271FA8C400120472 /* TodayViewController.swift */,
+				547D5C0727279D4D00120472 /* SearchViewController.swift */,
+			);
+			path = TabBarItemControllers;
+			sourceTree = "<group>";
+		};
+		5499F343272B9DEA00EE2BB9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5499F344272B9E1A00EE2BB9 /* CustomCell.swift */,
+				5499F345272B9E1A00EE2BB9 /* CustomCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		A94DDB978925AB61FB7E3930 /* Pods */ = {
@@ -221,6 +243,7 @@
 			files = (
 				547D5BB1271FA8C600120472 /* LaunchScreen.storyboard in Resources */,
 				547D5BAE271FA8C600120472 /* Assets.xcassets in Resources */,
+				5499F347272B9E1A00EE2BB9 /* CustomCell.xib in Resources */,
 				547D5BAC271FA8C400120472 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +299,7 @@
 			files = (
 				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
 				547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */,
+				5499F346272B9E1A00EE2BB9 /* CustomCell.swift in Sources */,
 				547D5C0827279D4D00120472 /* SearchViewController.swift in Sources */,
 				547D5BA9271FA8C400120472 /* TodayViewController.swift in Sources */,
 				547D5BFE2723B90700120472 /* NavigationController.swift in Sources */,

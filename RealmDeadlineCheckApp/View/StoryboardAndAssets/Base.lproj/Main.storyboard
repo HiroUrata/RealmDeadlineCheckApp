@@ -20,62 +20,54 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sax-wz-s6m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sax-wz-s6m">
                                 <rect key="frame" x="20" y="162" width="374" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="za9-TT-i9O">
-                                        <rect key="frame" x="20" y="49.5" width="334" height="130"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="111" id="za9-TT-i9O">
+                                        <rect key="frame" x="20" y="49.5" width="334" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="za9-TT-i9O" id="1uk-xY-GY6">
-                                            <rect key="frame" x="0.0" y="0.0" width="334" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="334" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" editable="NO" text="商品名 JAN（下3桁）撤去日" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sog-lu-16R">
-                                                    <rect key="frame" x="20" y="11" width="294" height="108"/>
-                                                    <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Sog-lu-16R" firstAttribute="top" secondItem="1uk-xY-GY6" secondAttribute="top" constant="11" id="Kh1-iz-ICG"/>
-                                                <constraint firstAttribute="trailing" secondItem="Sog-lu-16R" secondAttribute="trailing" constant="20" id="RJ2-ZC-r36"/>
-                                                <constraint firstItem="Sog-lu-16R" firstAttribute="leading" secondItem="1uk-xY-GY6" secondAttribute="leading" constant="20" id="UU1-Bd-W7Z"/>
-                                                <constraint firstAttribute="bottom" secondItem="Sog-lu-16R" secondAttribute="bottom" constant="11" id="xzV-kn-4Dy"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PGy-1U-OYX">
-                                <rect key="frame" x="20" y="110" width="374" height="32"/>
+                                <rect key="frame" x="64" y="108" width="286" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.42276275959999998" blue="0.50332269169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="4Eo-IG-2Oa"/>
+                                    <constraint firstAttribute="height" constant="31" id="atC-5g-rm0"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Today"/>
                                     <segment title="All"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <connections>
+                                    <action selector="changeCellContents:" destination="BYZ-38-t0r" eventType="valueChanged" id="GNL-Rq-2NE"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sax-wz-s6m" secondAttribute="trailing" constant="20" id="1JL-VI-VJU"/>
-                            <constraint firstItem="sax-wz-s6m" firstAttribute="top" secondItem="PGy-1U-OYX" secondAttribute="bottom" constant="21" id="LI4-TQ-7VV"/>
-                            <constraint firstItem="sax-wz-s6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MTo-M0-d8m"/>
-                            <constraint firstItem="PGy-1U-OYX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="dID-Ux-W3C"/>
-                            <constraint firstItem="sax-wz-s6m" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kfg-Mh-FAv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PGy-1U-OYX" secondAttribute="trailing" constant="20" id="o2f-Yt-HhJ"/>
-                            <constraint firstItem="PGy-1U-OYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oI2-uR-X2y"/>
+                            <constraint firstItem="sax-wz-s6m" firstAttribute="top" secondItem="PGy-1U-OYX" secondAttribute="bottom" constant="23" id="Kwl-QG-Bus"/>
+                            <constraint firstItem="sax-wz-s6m" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="S9Q-cX-3dt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PGy-1U-OYX" secondAttribute="trailing" constant="64" id="UmV-vc-Agu"/>
+                            <constraint firstItem="PGy-1U-OYX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Xbq-b9-GIl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sax-wz-s6m" secondAttribute="trailing" constant="20" id="jsS-dS-Wdg"/>
+                            <constraint firstItem="sax-wz-s6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pB0-0N-BHQ"/>
+                            <constraint firstItem="PGy-1U-OYX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xKg-oG-IBy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="clock.fill" catalog="system" id="85Z-D2-yfC"/>
                     <navigationItem key="navigationItem" id="Dhf-FO-qXl"/>
+                    <connections>
+                        <outlet property="cellContentsChanger" destination="PGy-1U-OYX" id="fDu-2v-y5Q"/>
+                        <outlet property="showRealmDataTableView" destination="sax-wz-s6m" id="hJ4-fo-YNZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,9 +188,6 @@
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="haikei01" width="250" height="500"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

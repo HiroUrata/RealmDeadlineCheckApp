@@ -13,7 +13,8 @@ class RealmCRUDModel{
     private let registerDatas = RegisterDatas()
     private let alert = Alert()
     
-    lazy var readResultAllDatas:[[String:String]] = []
+    lazy public var readResultAllDatas:[[String:String]] = []
+    lazy public var todayReadResultDatas:[[String:String]] = []
     
 }
 
@@ -50,7 +51,6 @@ extension RealmCRUDModel{
             readResultAllDatas = []
             
             try realm.write({
-                
                 realm.objects(RegisterDatas.self).forEach { item in
                     
                     readResultAllDatas.append(["allReadProductName":item.productName,
@@ -58,9 +58,7 @@ extension RealmCRUDModel{
                                                "allReadDeadlineDay":item.deadlineDay])
                 }
             })
-            
-            
-            
+ 
         }catch{
             
             alert.showWarningAlert(warningContent: "データの取得", targetView: alertTarget)
