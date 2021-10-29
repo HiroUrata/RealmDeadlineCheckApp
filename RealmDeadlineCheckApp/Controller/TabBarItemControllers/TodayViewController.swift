@@ -14,7 +14,7 @@ class TodayViewController: UIViewController{
     @IBOutlet weak var showRealmDataTableView: UITableView!
     
     private let realmCRUDModel = RealmCRUDModel()
-
+    private let viewDesigns = ViewDesigns()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +22,27 @@ class TodayViewController: UIViewController{
         showRealmDataTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         showRealmDataTableView.delegate = self
         showRealmDataTableView.dataSource = self
+        
+        
     }
 
 //showRealmDataTableViewに表示する内容の変更
     @IBAction func changeCellContents(_ sender: UISegmentedControl) {
         
+        switch sender.selectedSegmentIndex{
         
+        case 0: //当日分のデータを取得
+            
+            showRealmDataTableView.reloadData()
+            
+        case 1: //全てのデータを取得
+
+            showRealmDataTableView.reloadData()
+            
+        default:
+            
+            break
+        }
     }
     
 }
@@ -43,18 +58,18 @@ extension TodayViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        switch cellContentsChanger.selectedSegmentIndex{
-//
-//        case 0:
-//            return realmCRUDModel.todayReadResultDatas.count
-//
-//        case 1:
-//            return realmCRUDModel.readResultAllDatas.count
-//
-//        default:
-//            return 0
-//        }
-        return 50//完成後削除
+        switch cellContentsChanger.selectedSegmentIndex{
+
+        case 0:
+            return realmCRUDModel.todayReadResultDatas.count
+
+        case 1:
+            return realmCRUDModel.readResultAllDatas.count
+
+        default:
+            return 0
+        }
+        //return 50//完成後削除
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,12 +83,12 @@ extension TodayViewController:UITableViewDataSource{
                 
             cell.cellDateLabel.text = realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"] ?? "ERROR"
             cell.cellTextView.text = """
-                商品名:
-                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"] ?? "ERROR")
-                
-                Jan:
-                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"] ?? "ERROR")
-                """
+                                     商品名:
+                                     \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"] ?? "ERROR")
+                                     
+                                     Jan:
+                                     \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"] ?? "ERROR")
+                                     """
             }else{
                 cell.cellDateLabel.text = "ERROR"
                 cell.cellTextView.text = "ERROR"
@@ -100,8 +115,7 @@ extension TodayViewController:UITableViewDataSource{
              cell.cellTextView.text = "ERROR"
         }
         
-        cell.cellDateLabel.layer.masksToBounds = true
-        cell.cellDateLabel.layer.cornerRadius = 39.0
+        viewDesigns.cellDesign(dateLabel: cell.cellDateLabel, textView: cell.cellTextView)
         
         return cell
     }
@@ -110,4 +124,16 @@ extension TodayViewController:UITableViewDataSource{
     
 }
 
+extension TodayViewController{
+    
+    private func getTodayDate(){
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ja_JP")
+        let date = Date()
+        print(formatter.string(from: date))
+    }
+}
 

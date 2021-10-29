@@ -9,15 +9,28 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    let viewDesigns = ViewDesigns()
+    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var janCodeTextField: UITextField!
+    @IBOutlet weak var deadlineDayTextField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+
+    private let realmCRUDModel = RealmCRUDModel()
+    private let viewDesigns = ViewDesigns()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //viewDesigns.searchViewControllerDesign(searchView: self.view)
-      
+        viewDesigns.searchViewDesign(searchButton: searchButton)
+        
+    }
+    
+    @IBAction func search(_ sender: UIButton) {
+        
+        
     }
     
 
-
 }
+
+
+

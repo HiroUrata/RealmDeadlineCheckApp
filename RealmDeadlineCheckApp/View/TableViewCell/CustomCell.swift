@@ -31,6 +31,8 @@ class CustomCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
      
+        cellDateLabel.text = ""
+        cellTextView.text = ""
         print("再利用")
     }
     

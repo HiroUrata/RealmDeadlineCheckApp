@@ -10,18 +10,26 @@ import UIKit
 
 class ViewDesigns{
     
-    let haikeiImageView = UIImageView(image: UIImage(named: "haikei01"))
-    
-    func todayViewViewControllerDesign(todayView:UIView){
+    public func searchViewDesign(searchButton:UIButton){
         
-        haikeiImageView.frame = todayView.frame
-        todayView.addSubview(haikeiImageView)
+        searchButton.layer.cornerRadius = 20.0
+        searchButton.layer.borderWidth = 5.0
+        searchButton.layer.borderColor = UIColor.black.cgColor
+        searchButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        searchButton.layer.shadowOpacity = 0.65
+        searchButton.layer.shadowRadius = 5
     }
     
-    func searchViewControllerDesign(searchView:UIView){
-        
-        haikeiImageView.frame = searchView.frame
-        searchView.addSubview(haikeiImageView)
-    }
+}
+
+extension ViewDesigns{
     
+    public func cellDesign(dateLabel:UILabel,textView:UITextView){
+        
+        dateLabel.layer.masksToBounds = true
+        dateLabel.layer.cornerRadius = 39.0
+        
+        textView.layer.masksToBounds = true
+        textView.layer.cornerRadius = 15.0
+    }
 }

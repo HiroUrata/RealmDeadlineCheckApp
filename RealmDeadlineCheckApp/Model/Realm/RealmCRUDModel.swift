@@ -9,7 +9,6 @@ import RealmSwift
 
 class RealmCRUDModel{
     
-    private let realm = try! Realm()
     private let registerDatas = RegisterDatas()
     private let alert = Alert()
     
@@ -21,14 +20,17 @@ class RealmCRUDModel{
 
 extension RealmCRUDModel{
     
-    public func createRealmData(createProductName:String,createJanCode:String,createDeadlineDay:String,createSignUpDay:String,alertTarget:UIViewController){
+    public func createRealmData(createProductName:String?,createJanCode:String?,createDeadlineDay:String?,alertTarget:UIViewController){
+        
+        guard let productName = createProductName else { return }
+        guard let janCode = createJanCode else { return }
+        guard let deadlineDay = createDeadlineDay else { return }
         
         do{
-            
-            registerDatas.productName = createProductName
-            registerDatas.janCode = createJanCode
-            registerDatas.deadlineDay = createDeadlineDay
-            registerDatas.signUpDay = createSignUpDay
+            let realm = try Realm()
+            registerDatas.productName = productName
+            registerDatas.janCode = janCode
+            registerDatas.deadlineDay = deadlineDay
             
             try realm.write({
                 
@@ -48,20 +50,21 @@ extension RealmCRUDModel{
     public func readRealmAllData(alertTarget:UIViewController){
         
         do{
+            let realm = try Realm()
             readResultAllDatas = []
             
-            try realm.write({
                 realm.objects(RegisterDatas.self).forEach { item in
                     
                     readResultAllDatas.append(["allReadProductName":item.productName,
                                                "allReadJanCode":item.janCode,
                                                "allReadDeadlineDay":item.deadlineDay])
                 }
-            })
- 
+            
         }catch{
             
             alert.showWarningAlert(warningContent: "データの取得", targetView: alertTarget)
         }
     }
 }
+
+
