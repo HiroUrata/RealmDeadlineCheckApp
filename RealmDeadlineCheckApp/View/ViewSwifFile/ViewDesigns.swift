@@ -33,3 +33,14 @@ extension ViewDesigns{
         textView.layer.cornerRadius = 15.0
     }
 }
+
+extension ViewDesigns{
+    
+    public func registerDesign(registerButton:UIButton){
+        
+        registerButton.layer.cornerRadius = 20.0
+        registerButton.layer.shadowOffset = CGSize(width: 5, height: 5)
+        registerButton.layer.shadowOpacity = 0.65
+        registerButton.layer.shadowRadius = 5
+    }
+}

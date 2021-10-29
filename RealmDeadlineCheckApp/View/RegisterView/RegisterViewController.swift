@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var deadlineDayTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
+    private let viewDesigns = ViewDesigns()
     
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
@@ -24,6 +25,8 @@ class RegisterViewController: UIViewController {
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
+        
+        viewDesigns.registerDesign(registerButton: registerButton)
     }
 
     override func viewDidLayoutSubviews() {

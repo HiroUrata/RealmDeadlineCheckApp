@@ -23,7 +23,12 @@ class TodayViewController: UIViewController{
         showRealmDataTableView.delegate = self
         showRealmDataTableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        getTodayDateAndRealmData()
     }
 
 //showRealmDataTableViewに表示する内容の変更
@@ -32,11 +37,11 @@ class TodayViewController: UIViewController{
         switch sender.selectedSegmentIndex{
         
         case 0: //当日分のデータを取得
-            
+            getTodayDateAndRealmData()
             showRealmDataTableView.reloadData()
             
         case 1: //全てのデータを取得
-
+            realmCRUDModel.readRealmAllData(alertTarget: self)
             showRealmDataTableView.reloadData()
             
         default:
@@ -126,7 +131,7 @@ extension TodayViewController:UITableViewDataSource{
 
 extension TodayViewController{
     
-    private func getTodayDate(){
+    private func getTodayDateAndRealmData(){
         
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -134,6 +139,7 @@ extension TodayViewController{
         formatter.locale = Locale(identifier: "ja_JP")
         let date = Date()
         print(formatter.string(from: date))
+        realmCRUDModel.readTodayRealmData(searchKeyDate: formatter.string(from: date), alertTarget: self)
     }
 }
 

@@ -53,11 +53,11 @@ extension RealmCRUDModel{
             let realm = try Realm()
             readResultAllDatas = []
             
-                realm.objects(RegisterDatas.self).forEach { item in
+                realm.objects(RegisterDatas.self).forEach { data in
                     
-                    readResultAllDatas.append(["allReadProductName":item.productName,
-                                               "allReadJanCode":item.janCode,
-                                               "allReadDeadlineDay":item.deadlineDay])
+                    readResultAllDatas.append(["allReadProductName":data.productName,
+                                               "allReadJanCode":data.janCode,
+                                               "allReadDeadlineDay":data.deadlineDay])
                 }
             
         }catch{
@@ -68,3 +68,24 @@ extension RealmCRUDModel{
 }
 
 
+extension RealmCRUDModel{
+    
+    public func readTodayRealmData(searchKeyDate:String,alertTarget:UIViewController){
+        
+        do{
+            let realm = try Realm()
+            todayReadResultDatas = []
+            
+            realm.objects(RegisterDatas.self).filter(NSPredicate(format: "deadlineDay == %@", searchKeyDate)).forEach { todayData in
+                
+                todayReadResultDatas.append(["todayReadProductName":todayData.productName,
+                                             "todayReadJanCode":todayData.janCode,
+                                             "todayReadDeadlineDay":todayData.deadlineDay])
+            }
+            
+        }catch{
+            
+            alert.showWarningAlert(warningContent: "データの取得", targetView: alertTarget)
+        }
+    }
+}

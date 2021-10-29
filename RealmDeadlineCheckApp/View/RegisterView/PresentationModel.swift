@@ -15,7 +15,6 @@ class PresentationController: UIPresentationController {
   var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
   
     
-    
   override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
     
       blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark)) //UIBlurの明るさを変えられる
@@ -34,13 +33,19 @@ class PresentationController: UIPresentationController {
     
   override var frameOfPresentedViewInContainerView: CGRect {  //数字の変更で持ち上げる高さを変えられる
     
-    CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.4),
-           size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
+    if UIScreen.main.bounds.height < 896{
+        
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.25),
+                      size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
+        
+    }else{
+        
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.4),
+                      size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
+    }
     
-    
-    
+   
   }
-
     
     
   override func presentationTransitionWillBegin() { //blurEffectViewの濃さの変更が可能
@@ -73,7 +78,6 @@ class PresentationController: UIPresentationController {
     
     
   override func containerViewWillLayoutSubviews() {
-    
       super.containerViewWillLayoutSubviews()
     
     presentedView!.roundCorners([.topLeft, .topRight], radius: 22)
@@ -84,7 +88,6 @@ class PresentationController: UIPresentationController {
     
     
   override func containerViewDidLayoutSubviews() {
-    
       super.containerViewDidLayoutSubviews()
     
       presentedView?.frame = frameOfPresentedViewInContainerView

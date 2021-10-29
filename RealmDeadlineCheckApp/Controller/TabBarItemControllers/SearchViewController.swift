@@ -26,7 +26,7 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: UIButton) {
         
-        
+        realmCRUDModel.createRealmData(createProductName: productNameTextField.text, createJanCode: janCodeTextField.text, createDeadlineDay: deadlineDayTextField.text, alertTarget: self)
     }
     
 
