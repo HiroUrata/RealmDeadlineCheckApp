@@ -11,12 +11,13 @@ class TodayViewController: UIViewController{
 
     let viewDesigns = ViewDesigns()
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("TodayViewController")
+      
         
-        //viewDesigns.todayViewViewControllerDesign(todayView: self.view)
     }
 
 

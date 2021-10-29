@@ -19,6 +19,7 @@
 		547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C032726EFDC00120472 /* RegisterDatas.swift */; };
 		547D5C0827279D4D00120472 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C0727279D4D00120472 /* SearchViewController.swift */; };
 		547D5C0A27283A8800120472 /* RealmCRUDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5C0927283A8800120472 /* RealmCRUDModel.swift */; };
+		5499F33B272B864F00EE2BB9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5499F33A272B864F00EE2BB9 /* Alert.swift */; };
 		E03B50BC5A83773E9B288505 /* Pods_RealmDeadlineCheckApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		547D5C032726EFDC00120472 /* RegisterDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDatas.swift; sourceTree = "<group>"; };
 		547D5C0727279D4D00120472 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		547D5C0927283A8800120472 /* RealmCRUDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCRUDModel.swift; sourceTree = "<group>"; };
+		5499F33A272B864F00EE2BB9 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		72D3A9196C538CDC3C3B955F /* Pods-RealmDeadlineCheckApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.release.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmDeadlineCheckApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,7 +90,6 @@
 				547D5BBA271FA96600120472 /* Model */,
 				547D5BB9271FA96000120472 /* View */,
 				547D5BB8271FA95800120472 /* Controller */,
-				547D5BAF271FA8C600120472 /* LaunchScreen.storyboard */,
 				547D5BB2271FA8C600120472 /* Info.plist */,
 			);
 			path = RealmDeadlineCheckApp;
@@ -108,9 +109,8 @@
 		547D5BB9271FA96000120472 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				547D5BAA271FA8C400120472 /* Main.storyboard */,
-				547D5BAD271FA8C600120472 /* Assets.xcassets */,
-				547D5C012723B9B300120472 /* ViewDesigns.swift */,
+				5499F338272B85C500EE2BB9 /* StoryboardAndAssets */,
+				5499F339272B85FC00EE2BB9 /* ViewSwifFile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,10 +118,37 @@
 		547D5BBA271FA96600120472 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5499F337272B859800EE2BB9 /* Realm */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5499F337272B859800EE2BB9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
 				547D5C032726EFDC00120472 /* RegisterDatas.swift */,
 				547D5C0927283A8800120472 /* RealmCRUDModel.swift */,
 			);
-			path = Model;
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		5499F338272B85C500EE2BB9 /* StoryboardAndAssets */ = {
+			isa = PBXGroup;
+			children = (
+				547D5BAA271FA8C400120472 /* Main.storyboard */,
+				547D5BAF271FA8C600120472 /* LaunchScreen.storyboard */,
+				547D5BAD271FA8C600120472 /* Assets.xcassets */,
+			);
+			path = StoryboardAndAssets;
+			sourceTree = "<group>";
+		};
+		5499F339272B85FC00EE2BB9 /* ViewSwifFile */ = {
+			isa = PBXGroup;
+			children = (
+				547D5C012723B9B300120472 /* ViewDesigns.swift */,
+				5499F33A272B864F00EE2BB9 /* Alert.swift */,
+			);
+			path = ViewSwifFile;
 			sourceTree = "<group>";
 		};
 		A94DDB978925AB61FB7E3930 /* Pods */ = {
@@ -255,6 +282,7 @@
 				547D5C0A27283A8800120472 /* RealmCRUDModel.swift in Sources */,
 				547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */,
 				547D5C002723B96600120472 /* TabBarController.swift in Sources */,
+				5499F33B272B864F00EE2BB9 /* Alert.swift in Sources */,
 				547D5BA7271FA8C400120472 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
