@@ -26,12 +26,12 @@ class CustomCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+     
+        print("再利用")
     }
     
 }

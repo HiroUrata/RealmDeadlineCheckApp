@@ -19,10 +19,9 @@ class TodayViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showRealmDataTableView.register(CustomCell.self, forCellReuseIdentifier: "Cell")
+        showRealmDataTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         showRealmDataTableView.delegate = self
         showRealmDataTableView.dataSource = self
-        
     }
 
 //showRealmDataTableViewに表示する内容の変更
@@ -55,14 +54,54 @@ extension TodayViewController:UITableViewDataSource{
 //        default:
 //            return 0
 //        }
-        return 5//完成後削除
+        return 50//完成後削除
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         
-
+        switch cellContentsChanger.selectedSegmentIndex{
+        
+        case 0:
+            if realmCRUDModel.todayReadResultDatas.count > 0{
+                
+            cell.cellDateLabel.text = realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"] ?? "ERROR"
+            cell.cellTextView.text = """
+                商品名:
+                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"] ?? "ERROR")
+                
+                Jan:
+                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"] ?? "ERROR")
+                """
+            }else{
+                cell.cellDateLabel.text = "ERROR"
+                cell.cellTextView.text = "ERROR"
+            }
+            
+        case 1:
+            if realmCRUDModel.readResultAllDatas.count > 0{
+                
+            cell.cellDateLabel.text = realmCRUDModel.readResultAllDatas[indexPath.row]["allReadDeadlineDay"] ?? "ERROR"
+            cell.cellTextView.text = """
+                商品名:
+                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["allReadProductName"] ?? "ERROR")
+                
+                Jan:
+                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["allReadJanCode"] ?? "ERROR")
+                """
+            }else{
+                cell.cellDateLabel.text = "ERROR"
+                cell.cellTextView.text = "ERROR"
+            }
+            
+         default:
+             cell.cellDateLabel.text = "ERROR"
+             cell.cellTextView.text = "ERROR"
+        }
+        
+        cell.cellDateLabel.layer.masksToBounds = true
+        cell.cellDateLabel.layer.cornerRadius = 39.0
         
         return cell
     }
