@@ -35,12 +35,12 @@ class PresentationController: UIPresentationController {
     
     if UIScreen.main.bounds.height < 896{
         
-        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.25),
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.10),
                       size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
         
     }else{
         
-        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.4),
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.40),
                       size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
     }
     
@@ -80,8 +80,8 @@ class PresentationController: UIPresentationController {
   override func containerViewWillLayoutSubviews() {
       super.containerViewWillLayoutSubviews()
     
-    presentedView!.roundCorners([.topLeft, .topRight], radius: 22)
-    //presentedView?.roundCorners([.bottomLeft, .bottomRight], radius: 22)
+    presentedView!.roundCorners([.topLeft, .topRight,.bottomLeft, .bottomRight], radius: 22)
+    //presentedView!.roundCorners([.bottomLeft, .bottomRight], radius: 22)
     
   }
 

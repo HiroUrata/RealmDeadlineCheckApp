@@ -27,6 +27,9 @@ class RegisterViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
         
+        let keyboardHideGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHidden))
+        view.addGestureRecognizer(keyboardHideGesture)
+        
         viewDesigns.registerDesign(registerButton: registerButton)
     }
 
@@ -61,6 +64,11 @@ class RegisterViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func keyboardHidden() {
+        
+        view.endEditing(true)
     }
     
     @IBAction func register(_ sender: UIButton) {
