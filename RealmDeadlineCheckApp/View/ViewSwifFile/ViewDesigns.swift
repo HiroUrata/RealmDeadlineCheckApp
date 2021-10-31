@@ -42,5 +42,7 @@ extension ViewDesigns{
         registerButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         registerButton.layer.shadowOpacity = 0.65
         registerButton.layer.shadowRadius = 5
+        registerButton.layer.borderWidth = 3.0
+        registerButton.layer.borderColor = UIColor(red: 0, green: 76/255, blue: 152/255, alpha: 1.0).cgColor
     }
 }

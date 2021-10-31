@@ -9,11 +9,12 @@ import RealmSwift
 
 class RealmCRUDModel{
     
-    private let registerDatas = RegisterDatas()
+    private let realm: Realm = try! Realm()
     private let alert = Alert()
     
     lazy public var readResultAllDatas:[[String:String]] = []
     lazy public var todayReadResultDatas:[[String:String]] = []
+    lazy public var searchResultDatas:[[String:String]] = []
     
 }
 
@@ -27,7 +28,8 @@ extension RealmCRUDModel{
         guard let deadlineDay = createDeadlineDay else { return }
         
         do{
-            let realm = try Realm()
+            let registerDatas = RegisterDatas()
+            
             registerDatas.productName = productName
             registerDatas.janCode = janCode
             registerDatas.deadlineDay = deadlineDay
@@ -81,11 +83,73 @@ extension RealmCRUDModel{
                 todayReadResultDatas.append(["todayReadProductName":todayData.productName,
                                              "todayReadJanCode":todayData.janCode,
                                              "todayReadDeadlineDay":todayData.deadlineDay])
+                
             }
+            
             
         }catch{
             
             alert.showWarningAlert(warningContent: "データの取得", targetView: alertTarget)
         }
     }
+}
+
+
+extension RealmCRUDModel{
+    
+    public func searchRealmData(searchKeyProductName:String,searchKeyJanCode:String,searchKeyDeadlineDay:String,alertTarget:UIViewController){
+        
+        do{
+            let realm = try Realm()
+            let filterKeyProductName = NSPredicate(format: "productName == %@", searchKeyProductName)
+            let filterKeyjanCode = NSPredicate(format: "janCode == %@", searchKeyJanCode)
+            let filterKeydeadlineDay = NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)
+        
+            if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true{
+                
+                realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeyjanCode).filter(filterKeydeadlineDay).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                }
+                
+            }else if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty) != true && searchKeyDeadlineDay.isEmpty == true{
+                
+                realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeyjanCode).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                }
+                
+            }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyJanCode.isEmpty == true{
+             
+                realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeydeadlineDay).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                }
+                
+            }else if (searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyProductName.isEmpty == true{
+                
+                realm.objects(RegisterDatas.self).filter(filterKeyjanCode).filter(filterKeydeadlineDay).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                }
+                
+            }else if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) == true{
+                
+                alert.showWarningAlert(warningContent: "データの検索", targetView: alertTarget)
+            }
+            
+        }catch{
+            
+            alert.showWarningAlert(warningContent: "データの検索", targetView: alertTarget)
+        }
+    }
+    
 }

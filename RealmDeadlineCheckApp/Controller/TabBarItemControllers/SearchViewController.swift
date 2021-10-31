@@ -26,7 +26,12 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: UIButton) {
         
-        realmCRUDModel.createRealmData(createProductName: productNameTextField.text, createJanCode: janCodeTextField.text, createDeadlineDay: deadlineDayTextField.text, alertTarget: self)
+        //各テキストフィールドの値によって検索をする
+        switch (productNameTextField.text?.isEmpty,janCodeTextField.text?.isEmpty,deadlineDayTextField.text?.isEmpty){
+        
+        case (true, true, true):
+            <#code#>
+        
     }
     
 

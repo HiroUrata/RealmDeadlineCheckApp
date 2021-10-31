@@ -88,11 +88,9 @@ extension TodayViewController:UITableViewDataSource{
                 
             cell.cellDateLabel.text = realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"] ?? "ERROR"
             cell.cellTextView.text = """
-                                     商品名:
-                                     \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"] ?? "ERROR")
+                                     商品名: \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"] ?? "ERROR")
                                      
-                                     Jan:
-                                     \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"] ?? "ERROR")
+                                     Jan: \(realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"] ?? "ERROR")
                                      """
             }else{
                 cell.cellDateLabel.text = "ERROR"
@@ -104,11 +102,9 @@ extension TodayViewController:UITableViewDataSource{
                 
             cell.cellDateLabel.text = realmCRUDModel.readResultAllDatas[indexPath.row]["allReadDeadlineDay"] ?? "ERROR"
             cell.cellTextView.text = """
-                商品名:
-                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["allReadProductName"] ?? "ERROR")
+                商品名: \(realmCRUDModel.readResultAllDatas[indexPath.row]["allReadProductName"] ?? "ERROR")
                 
-                Jan:
-                \(realmCRUDModel.todayReadResultDatas[indexPath.row]["allReadJanCode"] ?? "ERROR")
+                Jan: \(realmCRUDModel.readResultAllDatas[indexPath.row]["allReadJanCode"] ?? "ERROR")
                 """
             }else{
                 cell.cellDateLabel.text = "ERROR"
@@ -140,6 +136,9 @@ extension TodayViewController{
         let date = Date()
         print(formatter.string(from: date))
         realmCRUDModel.readTodayRealmData(searchKeyDate: formatter.string(from: date), alertTarget: self)
+        
+        
+
     }
 }
 

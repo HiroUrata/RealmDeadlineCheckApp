@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var deadlineDayTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
+    private let realmCRUDModel = RealmCRUDModel()
     private let viewDesigns = ViewDesigns()
     
     var hasSetPointOrigin = false
@@ -64,8 +65,15 @@ class RegisterViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         
+        if registerProductNameTextField.text?.isEmpty != true && janTextField.text?.isEmpty != true && deadlineDayTextField.text?.isEmpty != true{
+            
+            realmCRUDModel.createRealmData(createProductName: registerProductNameTextField.text, createJanCode: janTextField.text, createDeadlineDay: deadlineDayTextField.text, alertTarget: self)
+            
+            registerProductNameTextField.text = ""
+            janTextField.text = ""
+            deadlineDayTextField.text = ""
+        }
         
     }
     
-
 }

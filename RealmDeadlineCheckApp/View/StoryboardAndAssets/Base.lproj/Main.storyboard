@@ -87,7 +87,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-sg-Lcf">
-                                <rect key="frame" x="78" y="555" width="259" height="60"/>
+                                <rect key="frame" x="78" y="534" width="259" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="OnM-jk-p33"/>
@@ -128,10 +128,10 @@
                         <viewLayoutGuide key="safeArea" id="Kgz-lK-oWP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9ak-sg-Lcf" firstAttribute="top" secondItem="wW2-Ew-OFN" secondAttribute="bottom" constant="91" id="7hG-fu-AjO"/>
+                            <constraint firstItem="9ak-sg-Lcf" firstAttribute="top" secondItem="wW2-Ew-OFN" secondAttribute="bottom" constant="70" id="7hG-fu-AjO"/>
                             <constraint firstItem="Ds0-X6-XFc" firstAttribute="top" secondItem="flc-8O-Uch" secondAttribute="bottom" constant="86" id="FxF-ky-rXc"/>
                             <constraint firstItem="Kgz-lK-oWP" firstAttribute="trailing" secondItem="flc-8O-Uch" secondAttribute="trailing" constant="54" id="MWX-lh-Zpm"/>
-                            <constraint firstItem="Kgz-lK-oWP" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="9ak-sg-Lcf" secondAttribute="bottom" constant="198" id="OZ8-UP-EUT"/>
+                            <constraint firstItem="Kgz-lK-oWP" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="9ak-sg-Lcf" secondAttribute="bottom" constant="219" id="OZ8-UP-EUT"/>
                             <constraint firstItem="flc-8O-Uch" firstAttribute="top" relation="lessThanOrEqual" secondItem="Kgz-lK-oWP" secondAttribute="top" constant="102" id="Pg0-Eb-r8w"/>
                             <constraint firstItem="Kgz-lK-oWP" firstAttribute="trailing" secondItem="Ds0-X6-XFc" secondAttribute="trailing" constant="54" id="SrZ-HV-qGP"/>
                             <constraint firstItem="wW2-Ew-OFN" firstAttribute="top" secondItem="Ds0-X6-XFc" secondAttribute="bottom" constant="86" id="TDS-9W-ZJk"/>
