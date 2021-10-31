@@ -9,7 +9,6 @@ import RealmSwift
 
 class RealmCRUDModel{
     
-    private let realm: Realm = try! Realm()
     private let alert = Alert()
     
     lazy public var readResultAllDatas:[[String:String]] = []
@@ -28,6 +27,7 @@ extension RealmCRUDModel{
         guard let deadlineDay = createDeadlineDay else { return }
         
         do{
+            let realm = try Realm()
             let registerDatas = RegisterDatas()
             
             registerDatas.productName = productName
@@ -105,43 +105,74 @@ extension RealmCRUDModel{
             let filterKeyjanCode = NSPredicate(format: "janCode == %@", searchKeyJanCode)
             let filterKeydeadlineDay = NSPredicate(format: "deadlineDay == %@", searchKeyDeadlineDay)
         
-            if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true{
-                
+            switch (searchKeyProductName.isEmpty,searchKeyJanCode.isEmpty,searchKeyDeadlineDay.isEmpty){
+            
+            case (false, false, false):
                 realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeyjanCode).filter(filterKeydeadlineDay).forEach { searchData in
                     
                     searchResultDatas.append(["searchReadProductName":searchData.productName,
                                               "searchReadJanCode":searchData.janCode,
                                               "searchReadDeadlineDay":searchData.deadlineDay])
+                    
                 }
                 
-            }else if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty) != true && searchKeyDeadlineDay.isEmpty == true{
-                
+            case (false, false, true):
                 realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeyjanCode).forEach { searchData in
                     
+                    print(searchData.deadlineDay)
                     searchResultDatas.append(["searchReadProductName":searchData.productName,
                                               "searchReadJanCode":searchData.janCode,
                                               "searchReadDeadlineDay":searchData.deadlineDay])
+                    print(searchResultDatas)
                 }
                 
-            }else if (searchKeyProductName.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyJanCode.isEmpty == true{
-             
+            case (false, true, false):
                 realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeydeadlineDay).forEach { searchData in
                     
                     searchResultDatas.append(["searchReadProductName":searchData.productName,
                                               "searchReadJanCode":searchData.janCode,
                                               "searchReadDeadlineDay":searchData.deadlineDay])
                 }
+                print(searchResultDatas)
                 
-            }else if (searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) != true && searchKeyProductName.isEmpty == true{
-                
+            case (true, false, false):
                 realm.objects(RegisterDatas.self).filter(filterKeyjanCode).filter(filterKeydeadlineDay).forEach { searchData in
                     
                     searchResultDatas.append(["searchReadProductName":searchData.productName,
                                               "searchReadJanCode":searchData.janCode,
                                               "searchReadDeadlineDay":searchData.deadlineDay])
+                    
+                }
+                print(searchResultDatas)
+                
+            case (false, true, true):
+                realm.objects(RegisterDatas.self).filter(filterKeyProductName).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                }
+                print(searchResultDatas)
+                
+            case (true, false, true):
+                realm.objects(RegisterDatas.self).filter(filterKeyjanCode).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                    
                 }
                 
-            }else if (searchKeyProductName.isEmpty && searchKeyJanCode.isEmpty && searchKeyDeadlineDay.isEmpty) == true{
+            case (true, true, false):
+                realm.objects(RegisterDatas.self).filter(filterKeydeadlineDay).forEach { searchData in
+                    
+                    searchResultDatas.append(["searchReadProductName":searchData.productName,
+                                              "searchReadJanCode":searchData.janCode,
+                                              "searchReadDeadlineDay":searchData.deadlineDay])
+                    
+                }
+                
+            case (true, true, true):
                 
                 alert.showWarningAlert(warningContent: "データの検索", targetView: alertTarget)
             }

@@ -27,10 +27,18 @@ class SearchViewController: UIViewController {
     @IBAction func search(_ sender: UIButton) {
         
         //各テキストフィールドの値によって検索をする
-        switch (productNameTextField.text?.isEmpty,janCodeTextField.text?.isEmpty,deadlineDayTextField.text?.isEmpty){
-        
-        case (true, true, true):
-            <#code#>
+        if productNameTextField.text?.isEmpty != true || janCodeTextField.text?.isEmpty != true || deadlineDayTextField.text?.isEmpty != true{
+            
+            let searchResultVC = self.storyboard?.instantiateViewController(identifier: "searchResultVC") as! SearchResultViewController
+            
+            searchResultVC.navigationItem.title = "SearchResults"
+            searchResultVC.keyProductName = productNameTextField.text!
+            searchResultVC.keyJanCode = janCodeTextField.text!
+            searchResultVC.keyDeadlineDay = deadlineDayTextField.text!
+            
+            self.navigationController?.pushViewController(searchResultVC, animated: true)
+            
+        }
         
     }
     
