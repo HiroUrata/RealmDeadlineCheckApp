@@ -182,24 +182,24 @@ extension RealmCRUDModel{
             alert.showWarningAlert(warningContent: "データの検索", targetView: alertTarget)
         }
     }
-    
 }
 
 extension RealmCRUDModel{
     
-    public func deleteSelectRealmData(selectDataNumber:Int,alertTarget:UIViewController){
+    public func deleteSelectRealmData(selectProductName:String,selectJanCode:String,selectDeadlineDay:String,alertTarget:UIViewController){
         
         do{
             let realm = try Realm()
+            let filterKeyProductName = NSPredicate(format: "productName == %@", selectProductName)
+            let filterKeyjanCode = NSPredicate(format: "janCode == %@", selectJanCode)
+            let filterKeydeadlineDay = NSPredicate(format: "deadlineDay == %@", selectDeadlineDay)
             
             try realm.write({
                 
-                realm.delete(realm.objects(RegisterDatas.self)[selectDataNumber])
+                realm.delete(realm.objects(RegisterDatas.self).filter(filterKeyProductName).filter(filterKeyjanCode).filter(filterKeydeadlineDay))
             })
-            
         }catch{
             
-            alert.showWarningAlert(warningContent: "データの削除", targetView: alertTarget)
         }
     }
 }
@@ -221,3 +221,4 @@ extension RealmCRUDModel{
         }
     }
 }
+

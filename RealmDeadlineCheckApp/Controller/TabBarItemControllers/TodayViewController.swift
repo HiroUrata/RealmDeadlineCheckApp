@@ -55,6 +55,27 @@ class TodayViewController: UIViewController{
 //UITableViewDelegate
 extension TodayViewController:UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "") {(_,_, _) in
+            
+            switch self.cellContentsChanger.selectedSegmentIndex{
+            
+            case 0:
+                self.realmCRUDModel.deleteSelectRealmData(selectProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!, selectJanCode: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"]!, selectDeadlineDay: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"]!, alertTarget: self)
+                self.realmCRUDModel.todayReadResultDatas.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.realmCRUDModel.readTodayRealmData(searchKeyDate: <#T##String#>, alertTarget: <#T##UIViewController#>)
+   
+                
+            case 1:
+            
+                
+            default:
+                <#code#>
+            }
+        }
+    }
     
 }
 
@@ -136,9 +157,6 @@ extension TodayViewController{
         let date = Date()
         print(formatter.string(from: date))
         realmCRUDModel.readTodayRealmData(searchKeyDate: formatter.string(from: date), alertTarget: self)
-        
-        
-
     }
 }
 

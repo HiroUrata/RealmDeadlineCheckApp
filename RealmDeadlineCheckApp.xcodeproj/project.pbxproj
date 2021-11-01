@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541BD255272F901600460508 /* GetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541BD254272F901600460508 /* GetDate.swift */; };
 		547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA4271FA8C400120472 /* AppDelegate.swift */; };
 		547D5BA7271FA8C400120472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA6271FA8C400120472 /* SceneDelegate.swift */; };
 		547D5BA9271FA8C400120472 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA8271FA8C400120472 /* TodayViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		25DE0A644024822B6E0D1D42 /* Pods-RealmDeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
+		541BD254272F901600460508 /* GetDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDate.swift; sourceTree = "<group>"; };
 		547D5BA1271FA8C400120472 /* RealmDeadlineCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDeadlineCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D5BA4271FA8C400120472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547D5BA6271FA8C400120472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		547D5BBA271FA96600120472 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				541BD254272F901600460508 /* GetDate.swift */,
 				5499F337272B859800EE2BB9 /* Realm */,
 			);
 			path = Model;
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
+				541BD255272F901600460508 /* GetDate.swift in Sources */,
 				547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */,
 				5499F346272B9E1A00EE2BB9 /* CustomCell.swift in Sources */,
 				5499F357272BE0E600EE2BB9 /* PresentationModel.swift in Sources */,
