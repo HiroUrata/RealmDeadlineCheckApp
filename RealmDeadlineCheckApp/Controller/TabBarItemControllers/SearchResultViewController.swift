@@ -21,8 +21,6 @@ class SearchResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         searchResultTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self

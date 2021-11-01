@@ -38,6 +38,7 @@ class TabBarController: UITabBarController, UIViewControllerTransitioningDelegat
         registerView.modalPresentationStyle = .custom
         registerView.transitioningDelegate = self
         present(registerView, animated: true, completion: nil)
+        
     }
     
     @objc func deleteRealmData() {
@@ -55,8 +56,6 @@ extension TabBarController{
         
     }
 }
-
-
 
 
 

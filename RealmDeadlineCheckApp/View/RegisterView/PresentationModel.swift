@@ -28,7 +28,6 @@ class PresentationController: UIPresentationController {
       self.blurEffectView.addGestureRecognizer(tapGestureRecognizer)
     
   }
-  
     
     
   override var frameOfPresentedViewInContainerView: CGRect {  //数字の変更で持ち上げる高さを変えられる

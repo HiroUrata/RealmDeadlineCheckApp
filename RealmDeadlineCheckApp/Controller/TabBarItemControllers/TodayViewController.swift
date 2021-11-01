@@ -7,17 +7,18 @@
 
 import UIKit
 
-class TodayViewController: UIViewController{
+class TodayViewController: UIViewController, UIViewControllerTransitioningDelegate{
 
 
     @IBOutlet weak var cellContentsChanger: UISegmentedControl!
     @IBOutlet weak var showRealmDataTableView: UITableView!
     
+    private let alamofireModel = AlamofireModel()
     private let realmCRUDModel = RealmCRUDModel()
     private let viewDesigns = ViewDesigns()
     private let getDate = GetDate()
     private let alert = Alert()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +30,11 @@ class TodayViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+                
         realmCRUDModel.readTodayRealmData(searchKeyDate: getDate.getTodayDate(), alertTarget: self)
     }
-
+    
+    
 //showRealmDataTableViewに表示する内容の変更
     @IBAction func changeCellContents(_ sender: UISegmentedControl) {
         
@@ -57,6 +59,7 @@ class TodayViewController: UIViewController{
 //UITableViewDelegate
 extension TodayViewController:UITableViewDelegate{
     
+    //スワイプアクション
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "") {(_,_, _) in
@@ -90,10 +93,31 @@ extension TodayViewController:UITableViewDelegate{
                 self.alert.showWarningAlert(warningContent: "データの削除", targetView: self)
             }
         }
+        
         deleteAction.image = UIImage(systemName: "trash.fill")
         deleteAction.backgroundColor = .systemRed
         
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        let searchProductImageAction = UIContextualAction(style: .normal, title: "画像検索") { _, _, _ in
+            
+            switch self.cellContentsChanger.selectedSegmentIndex{
+            
+            case 0:
+                //self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!)
+                let modalVC = SearchProductImageResultViewController()
+                modalVC.modalPresentationStyle = .custom
+                modalVC.transitioningDelegate = self
+                self.present(modalVC, animated: true, completion: nil)
+            
+            case 1:
+                self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadProductName"]!)
+                
+            default:
+                break
+            }
+        }
+        searchProductImageAction.backgroundColor = .systemTeal
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction,searchProductImageAction])
     }
     
 }
@@ -164,5 +188,6 @@ extension TodayViewController:UITableViewDataSource{
     
     
 }
+
 
 

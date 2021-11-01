@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		541BD255272F901600460508 /* GetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541BD254272F901600460508 /* GetDate.swift */; };
+		541BD258272FCCDC00460508 /* AlamofireModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541BD257272FCCDC00460508 /* AlamofireModel.swift */; };
+		541BD26727302BA200460508 /* SearchProductImageResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541BD26627302BA200460508 /* SearchProductImageResultViewController.swift */; };
+		541BD26927302BAC00460508 /* SearchProductImageResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 541BD26827302BAC00460508 /* SearchProductImageResultViewController.xib */; };
 		547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA4271FA8C400120472 /* AppDelegate.swift */; };
 		547D5BA7271FA8C400120472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA6271FA8C400120472 /* SceneDelegate.swift */; };
 		547D5BA9271FA8C400120472 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D5BA8271FA8C400120472 /* TodayViewController.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		25DE0A644024822B6E0D1D42 /* Pods-RealmDeadlineCheckApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmDeadlineCheckApp.debug.xcconfig"; path = "Target Support Files/Pods-RealmDeadlineCheckApp/Pods-RealmDeadlineCheckApp.debug.xcconfig"; sourceTree = "<group>"; };
 		541BD254272F901600460508 /* GetDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDate.swift; sourceTree = "<group>"; };
+		541BD257272FCCDC00460508 /* AlamofireModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireModel.swift; sourceTree = "<group>"; };
+		541BD26627302BA200460508 /* SearchProductImageResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductImageResultViewController.swift; sourceTree = "<group>"; };
+		541BD26827302BAC00460508 /* SearchProductImageResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchProductImageResultViewController.xib; sourceTree = "<group>"; };
 		547D5BA1271FA8C400120472 /* RealmDeadlineCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDeadlineCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D5BA4271FA8C400120472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547D5BA6271FA8C400120472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,14 @@
 				CB07D72366FA370C934FDA67 /* Pods_RealmDeadlineCheckApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		541BD256272FCBE000460508 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				541BD257272FCCDC00460508 /* AlamofireModel.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		547D5B98271FA8C400120472 = {
@@ -122,6 +136,8 @@
 		547D5BB9271FA96000120472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				541BD26627302BA200460508 /* SearchProductImageResultViewController.swift */,
+				541BD26827302BAC00460508 /* SearchProductImageResultViewController.xib */,
 				5499F351272BDC7400EE2BB9 /* RegisterView */,
 				5499F343272B9DEA00EE2BB9 /* TableViewCell */,
 				5499F338272B85C500EE2BB9 /* StoryboardAndAssets */,
@@ -133,8 +149,9 @@
 		547D5BBA271FA96600120472 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				541BD254272F901600460508 /* GetDate.swift */,
+				541BD256272FCBE000460508 /* Alamofire */,
 				5499F337272B859800EE2BB9 /* Realm */,
+				541BD254272F901600460508 /* GetDate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				547D5BB1271FA8C600120472 /* LaunchScreen.storyboard in Resources */,
+				541BD26927302BAC00460508 /* SearchProductImageResultViewController.xib in Resources */,
 				5499F355272BDC9A00EE2BB9 /* RegisterViewController.xib in Resources */,
 				547D5BAE271FA8C600120472 /* Assets.xcassets in Resources */,
 				5499F347272B9E1A00EE2BB9 /* CustomCell.xib in Resources */,
@@ -323,6 +341,7 @@
 			files = (
 				547D5C022723B9B300120472 /* ViewDesigns.swift in Sources */,
 				541BD255272F901600460508 /* GetDate.swift in Sources */,
+				541BD26727302BA200460508 /* SearchProductImageResultViewController.swift in Sources */,
 				547D5C042726EFDC00120472 /* RegisterDatas.swift in Sources */,
 				5499F346272B9E1A00EE2BB9 /* CustomCell.swift in Sources */,
 				5499F357272BE0E600EE2BB9 /* PresentationModel.swift in Sources */,
@@ -331,6 +350,7 @@
 				547D5BFE2723B90700120472 /* NavigationController.swift in Sources */,
 				547D5C0A27283A8800120472 /* RealmCRUDModel.swift in Sources */,
 				547D5BA5271FA8C400120472 /* AppDelegate.swift in Sources */,
+				541BD258272FCCDC00460508 /* AlamofireModel.swift in Sources */,
 				547D5C002723B96600120472 /* TabBarController.swift in Sources */,
 				5499F33B272B864F00EE2BB9 /* Alert.swift in Sources */,
 				5499F354272BDC9A00EE2BB9 /* RegisterViewController.swift in Sources */,

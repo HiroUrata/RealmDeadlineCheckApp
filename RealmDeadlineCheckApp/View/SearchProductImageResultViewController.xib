@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchProductImageResultViewController" customModule="RealmDeadlineCheckApp" customModuleProvider="target">
+            <connections>
+                <outlet property="productDetailTextField" destination="QrI-XY-EBK" id="ppx-qF-JpU"/>
+                <outlet property="productImageView" destination="SfF-Zd-JaC" id="9dV-AM-P1V"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="671"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SfF-Zd-JaC">
+                    <rect key="frame" x="87" y="69" width="240" height="237"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="237" id="RBe-ph-Kp2"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-XY-EBK">
+                    <rect key="frame" x="35" y="326" width="344" height="181"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="181" id="BNB-w9-INH"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SfF-Zd-JaC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="5hr-tN-ygd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SfF-Zd-JaC" secondAttribute="trailing" constant="87" id="FNG-Es-aaN"/>
+                <constraint firstItem="QrI-XY-EBK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="JaW-ct-aE3"/>
+                <constraint firstItem="QrI-XY-EBK" firstAttribute="top" secondItem="SfF-Zd-JaC" secondAttribute="bottom" constant="20" id="Kja-RH-8in"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QrI-XY-EBK" secondAttribute="trailing" constant="35" id="Sli-Jh-jVC"/>
+                <constraint firstItem="SfF-Zd-JaC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="YMr-za-GyA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="122.87946428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
