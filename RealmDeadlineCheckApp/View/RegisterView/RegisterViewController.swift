@@ -73,6 +73,8 @@ class RegisterViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         
+        self.view.frame.origin.y = view.safeAreaInsets.top
+        
         if registerProductNameTextField.text?.isEmpty != true && janTextField.text?.isEmpty != true && deadlineDayTextField.text?.isEmpty != true{
             
             realmCRUDModel.createRealmData(createProductName: registerProductNameTextField.text, createJanCode: janTextField.text, createDeadlineDay: deadlineDayTextField.text, alertTarget: self)

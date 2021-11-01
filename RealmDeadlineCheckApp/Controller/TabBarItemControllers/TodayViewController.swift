@@ -15,6 +15,8 @@ class TodayViewController: UIViewController{
     
     private let realmCRUDModel = RealmCRUDModel()
     private let viewDesigns = ViewDesigns()
+    private let getDate = GetDate()
+    private let alert = Alert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class TodayViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getTodayDateAndRealmData()
+        realmCRUDModel.readTodayRealmData(searchKeyDate: getDate.getTodayDate(), alertTarget: self)
     }
 
 //showRealmDataTableViewに表示する内容の変更
@@ -37,7 +39,7 @@ class TodayViewController: UIViewController{
         switch sender.selectedSegmentIndex{
         
         case 0: //当日分のデータを取得
-            getTodayDateAndRealmData()
+            realmCRUDModel.readTodayRealmData(searchKeyDate: getDate.getTodayDate(), alertTarget: self)
             showRealmDataTableView.reloadData()
             
         case 1: //全てのデータを取得
@@ -62,19 +64,34 @@ extension TodayViewController:UITableViewDelegate{
             switch self.cellContentsChanger.selectedSegmentIndex{
             
             case 0:
-                self.realmCRUDModel.deleteSelectRealmData(selectProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!, selectJanCode: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"]!, selectDeadlineDay: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"]!, alertTarget: self)
+                self.realmCRUDModel.deleteSelectRealmData(selectProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!,
+                                                          selectJanCode: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"]!,
+                                                          selectDeadlineDay: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"]!,
+                                                          alertTarget: self)
                 self.realmCRUDModel.todayReadResultDatas.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.realmCRUDModel.readTodayRealmData(searchKeyDate: <#T##String#>, alertTarget: <#T##UIViewController#>)
+                self.realmCRUDModel.readTodayRealmData(searchKeyDate: self.getDate.getTodayDate(), alertTarget: self)
+                tableView.reloadData()
    
                 
             case 1:
-            
+                self.realmCRUDModel.deleteSelectRealmData(selectProductName: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadProductName"]!,
+                                                          selectJanCode: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadJanCode"]!,
+                                                          selectDeadlineDay: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadDeadlineDay"]!,
+                                                          alertTarget: self)
+                self.realmCRUDModel.readResultAllDatas.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.realmCRUDModel.readRealmAllData(alertTarget: self)
+                tableView.reloadData()
                 
             default:
-                <#code#>
+                self.alert.showWarningAlert(warningContent: "データの削除", targetView: self)
             }
         }
+        deleteAction.image = UIImage(systemName: "trash.fill")
+        deleteAction.backgroundColor = .systemRed
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
 }
@@ -146,17 +163,4 @@ extension TodayViewController:UITableViewDataSource{
     
 }
 
-extension TodayViewController{
-    
-    private func getTodayDateAndRealmData(){
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = Locale(identifier: "ja_JP")
-        let date = Date()
-        print(formatter.string(from: date))
-        realmCRUDModel.readTodayRealmData(searchKeyDate: formatter.string(from: date), alertTarget: self)
-    }
-}
 

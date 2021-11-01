@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarController: UITabBarController, UIViewControllerTransitioningDelegate {
 
+    private let alert = Alert()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,8 @@ class TabBarController: UITabBarController, UIViewControllerTransitioningDelegat
         navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 76/255, blue: 152/255, alpha: 1.0)
         
             navigationController?.navigationBar.tintColor = .white 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus.rectangle.on.rectangle.fill"), style: .done, target: self, action: #selector(moveToSearchView))
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "plus.rectangle.on.rectangle.fill"), style: .done, target: self, action: #selector(moveToSearchView)),UIBarButtonItem(image: UIImage(systemName:  "trash.fill"), style: .done, target: self, action: #selector(deleteRealmData))]
+        
      
     }
     
@@ -36,6 +39,12 @@ class TabBarController: UITabBarController, UIViewControllerTransitioningDelegat
         registerView.transitioningDelegate = self
         present(registerView, animated: true, completion: nil)
     }
+    
+    @objc func deleteRealmData() {
+        
+        alert.showDeleteRealmDataAlert(targetView: self)
+    }
+    
 }
 
 extension TabBarController{
