@@ -18,6 +18,8 @@ class RegisterViewController: UIViewController {
     private let realmCRUDModel = RealmCRUDModel()
     private let viewDesigns = ViewDesigns()
     
+    private var judgeChangeViewPointYBool = true
+    
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
@@ -26,6 +28,9 @@ class RegisterViewController: UIViewController {
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(upViewPointY), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(downViewPointY), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let keyboardHideGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHidden))
         view.addGestureRecognizer(keyboardHideGesture)
@@ -66,14 +71,47 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @objc func upViewPointY(sender:NSNotification) {
+        
+        
+        if judgeChangeViewPointYBool == true{
+            
+            UIView.animate(withDuration: 0.2) {
+                
+                self.view.frame.origin.y = self.view.frame.origin.y - ((sender.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue!.height + (self.registerButton.frame.height - 10)
+                self.judgeChangeViewPointYBool = false
+            }
+        }
+    }
+    
+    @objc func downViewPointY(sender:NSNotification) {
+        
+        if judgeChangeViewPointYBool == false{
+            
+            UIView.animate(withDuration: 0.2) {
+                
+                if UIScreen.main.bounds.height < 896{
+                    
+                    self.view.frame.origin.y = UIScreen.main.bounds.height * 0.4
+                    self.judgeChangeViewPointYBool = true
+                    
+                }else{
+                    
+                    self.view.frame.origin.y = UIScreen.main.bounds.height * 0.5
+                    self.judgeChangeViewPointYBool = true
+                }
+                
+            }
+        }
+        
+    }
+    
     @objc func keyboardHidden() {
         
         view.endEditing(true)
     }
     
     @IBAction func register(_ sender: UIButton) {
-        
-        self.view.frame.origin.y = view.safeAreaInsets.top
         
         if registerProductNameTextField.text?.isEmpty != true && janTextField.text?.isEmpty != true && deadlineDayTextField.text?.isEmpty != true{
             

@@ -34,14 +34,14 @@ class PresentationController: UIPresentationController {
   override var frameOfPresentedViewInContainerView: CGRect {  //数字の変更で持ち上げる高さを変えられる
     
     if UIScreen.main.bounds.height < 896{
-        
-        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.10),
-                      size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
-        
-    }else{
-        
+
         return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.40),
                       size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
+
+    }else{
+        
+        return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.50),
+                      size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.6))
     }
     
    

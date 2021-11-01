@@ -68,6 +68,7 @@ extension TodayViewController:UITableViewDelegate{
                                                           selectJanCode: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadJanCode"]!,
                                                           selectDeadlineDay: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadDeadlineDay"]!,
                                                           alertTarget: self)
+                
                 self.realmCRUDModel.todayReadResultDatas.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.realmCRUDModel.readTodayRealmData(searchKeyDate: self.getDate.getTodayDate(), alertTarget: self)
@@ -79,6 +80,7 @@ extension TodayViewController:UITableViewDelegate{
                                                           selectJanCode: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadJanCode"]!,
                                                           selectDeadlineDay: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadDeadlineDay"]!,
                                                           alertTarget: self)
+                
                 self.realmCRUDModel.readResultAllDatas.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.realmCRUDModel.readRealmAllData(alertTarget: self)
