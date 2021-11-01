@@ -20,9 +20,18 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let keyboardHideGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHidden))
+        view.addGestureRecognizer(keyboardHideGesture)
+        
         viewDesigns.searchViewDesign(searchButton: searchButton)
         
     }
+    
+    @objc func keyboardHidden() {
+        
+        view.endEditing(true)
+    }
+    
     
     @IBAction func search(_ sender: UIButton) {
         

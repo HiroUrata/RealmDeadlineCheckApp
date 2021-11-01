@@ -184,3 +184,40 @@ extension RealmCRUDModel{
     }
     
 }
+
+extension RealmCRUDModel{
+    
+    public func deleteSelectRealmData(selectDataNumber:Int,alertTarget:UIViewController){
+        
+        do{
+            let realm = try Realm()
+            
+            try realm.write({
+                
+                realm.delete(realm.objects(RegisterDatas.self)[selectDataNumber])
+            })
+            
+        }catch{
+            
+            alert.showWarningAlert(warningContent: "データの削除", targetView: alertTarget)
+        }
+    }
+}
+
+extension RealmCRUDModel{
+    
+    public func deleteSelectDateRealmData(deleteDataDeadlineDay:String,alertTarget:UIViewController){
+        
+        do{
+            let realm = try Realm()
+            
+            try realm.write({
+                
+                realm.delete(realm.objects(RegisterDatas.self).filter(NSPredicate(format: "deadlineDay == %@", deleteDataDeadlineDay)))
+            })
+        }catch{
+         
+            alert.showWarningAlert(warningContent: "データの削除", targetView: alertTarget)
+        }
+    }
+}

@@ -22,7 +22,7 @@ class SearchResultViewController: UIViewController {
         super.viewDidLoad()
         
         
-
+        
         searchResultTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
@@ -34,6 +34,7 @@ class SearchResultViewController: UIViewController {
         
         realmCRUDModel.searchRealmData(searchKeyProductName: keyProductName, searchKeyJanCode: keyJanCode, searchKeyDeadlineDay: keyDeadlineDay, alertTarget: self)
     }
+    
 
 }
 
