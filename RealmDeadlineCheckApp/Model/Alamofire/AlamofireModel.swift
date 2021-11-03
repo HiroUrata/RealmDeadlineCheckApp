@@ -10,7 +10,8 @@ import SwiftyJSON
 
 class AlamofireModel{
     
-    var productImageURL = String()
+    public var productImageURL = String()
+    public var productItemCaption = String()
     
 }
 
@@ -18,7 +19,7 @@ extension AlamofireModel{
     
     public func searchProductImageURL(searchProductName:String){
         
-        let requestURL = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?format=json&keyword=\(searchProductName.urlEncoded)&hits=\(String(3).urlEncoded)&applicationId=1064818496677750225"
+        let requestURL = 
         
         AF.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
             
@@ -29,16 +30,20 @@ extension AlamofireModel{
                 self.productImageURL = ""
                 let json:JSON = JSON(response.data as Any)
                 
-                if json["Items"][0]["Item"]["mediumImageUrls"][0]["imageUrl"].string != nil{
+                if json["Items"][0]["Item"]["mediumImageUrls"][0]["imageUrl"].string != nil &&
+                   json["Items"][0]["Item"]["itemCaption"].string != nil{
                     
                     self.productImageURL = json["Items"][0]["Item"]["mediumImageUrls"][0]["imageUrl"].string!
-                    print(json["Items"][0]["Item"]["mediumImageUrls"][0]["imageUrl"].string!)
+                    self.productItemCaption = json["Items"][0]["Item"]["itemCaption"].string!
+                    print(self.productImageURL)
+                    print(self.productItemCaption)
                     
                 }else{
                     
                     print("取得出来てないよ")
                     break
                 }
+                
                 
             case .failure(let error):
                 print(error)

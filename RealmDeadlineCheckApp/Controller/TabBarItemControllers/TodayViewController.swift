@@ -102,11 +102,17 @@ extension TodayViewController:UITableViewDelegate{
             switch self.cellContentsChanger.selectedSegmentIndex{
             
             case 0:
-                //self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!)
-                let modalVC = SearchProductImageResultViewController()
-                modalVC.modalPresentationStyle = .custom
-                modalVC.transitioningDelegate = self
-                self.present(modalVC, animated: true, completion: nil)
+                self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    
+                    let modalVC = SearchProductImageResultViewController()
+                    modalVC.apiResultImageURL = self.alamofireModel.productImageURL
+                    modalVC.apiResultItemCaption = self.alamofireModel.productItemCaption
+                    modalVC.modalPresentationStyle = .automatic
+                    modalVC.transitioningDelegate = self
+                    self.present(modalVC, animated: true, completion: nil)
+                }
             
             case 1:
                 self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadProductName"]!)
