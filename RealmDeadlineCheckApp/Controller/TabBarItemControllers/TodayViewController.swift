@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, UIViewControllerTransitioningDelegate{
+class TodayViewController: UIViewController{
 
 
     @IBOutlet weak var cellContentsChanger: UISegmentedControl!
@@ -104,13 +104,12 @@ extension TodayViewController:UITableViewDelegate{
             case 0:
                 self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.todayReadResultDatas[indexPath.row]["todayReadProductName"]!)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                     
                     let modalVC = SearchProductImageResultViewController()
                     modalVC.apiResultImageURL = self.alamofireModel.productImageURL
                     modalVC.apiResultItemCaption = self.alamofireModel.productItemCaption
                     modalVC.modalPresentationStyle = .automatic
-                    modalVC.transitioningDelegate = self
                     self.present(modalVC, animated: true, completion: nil)
                 }
             

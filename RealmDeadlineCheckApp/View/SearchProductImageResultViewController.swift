@@ -12,6 +12,7 @@ class SearchProductImageResultViewController: UIViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productDetailTextField: UITextView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
     
     public var apiResultImageURL = String()
     public var apiResultItemCaption = String()
@@ -27,7 +28,9 @@ class SearchProductImageResultViewController: UIViewController {
         view.frame.origin.y = UIScreen.main.bounds.height * 0.3
         view.layer.cornerRadius = 20.0
         view.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        
+        blurView.layer.cornerRadius = 20.0
+        blurView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        blurView.layer.masksToBounds = true
         getAPIDataPaste(imageURL: apiResultImageURL, itemCaption: apiResultItemCaption)
     }
     
