@@ -28,6 +28,8 @@ class SearchProductImageResultViewController: UIViewController {
         view.frame.origin.y = UIScreen.main.bounds.height * 0.3
         view.layer.cornerRadius = 20.0
         view.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        productDetailTextField.layer.cornerRadius = 20.0
+        productDetailTextField.layer.masksToBounds = true
         blurView.layer.cornerRadius = 20.0
         blurView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         blurView.layer.masksToBounds = true

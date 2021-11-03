@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +32,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JANコード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBa-5g-CmD">
-                    <rect key="frame" x="55" y="167" width="122" height="21"/>
+                    <rect key="frame" x="55" y="167" width="230" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="AE4-dt-4np"/>
                     </constraints>
@@ -102,7 +103,7 @@
                 <constraint firstItem="PPH-hR-m8P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="36" id="Udn-oD-o6a"/>
                 <constraint firstItem="3xH-dN-xU4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="55" id="Uhi-QC-9Sk"/>
                 <constraint firstItem="nrc-6V-Tx1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="55" id="W0e-e5-Lik"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DBa-5g-CmD" secondAttribute="trailing" constant="237" id="XUj-N9-otC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DBa-5g-CmD" secondAttribute="trailing" constant="129" id="XUj-N9-otC"/>
                 <constraint firstItem="DBa-5g-CmD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="55" id="YJp-yh-h9Y"/>
                 <constraint firstItem="K1K-0a-14G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="81" id="d6t-sT-va3"/>
                 <constraint firstItem="PPH-hR-m8P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="55" id="gVZ-pT-J9b"/>
