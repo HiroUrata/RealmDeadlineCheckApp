@@ -23,6 +23,10 @@ class SearchViewController: UIViewController {
         let keyboardHideGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHidden))
         view.addGestureRecognizer(keyboardHideGesture)
         
+        productNameTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        janCodeTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        deadlineDayTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        
         viewDesigns.searchViewDesign(searchButton: searchButton)
         
     }
@@ -30,6 +34,11 @@ class SearchViewController: UIViewController {
     @objc func keyboardHidden() {
         
         view.endEditing(true)
+    }
+    
+    @objc func showKeyboard(sender:UITextField){
+        
+        sender.becomeFirstResponder()
     }
     
     

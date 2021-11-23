@@ -35,6 +35,10 @@ class RegisterViewController: UIViewController {
         let keyboardHideGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHidden))
         view.addGestureRecognizer(keyboardHideGesture)
         
+        registerProductNameTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        janTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        deadlineDayTextField.addTarget(self, action: #selector(showKeyboard), for: .touchUpInside)
+        
         viewDesigns.registerDesign(registerButton: registerButton)
     }
 
@@ -109,6 +113,11 @@ class RegisterViewController: UIViewController {
     @objc func keyboardHidden() {
         
         view.endEditing(true)
+    }
+    
+    @objc func showKeyboard(sender:UITextField){
+        
+        sender.becomeFirstResponder()
     }
     
     @IBAction func register(_ sender: UIButton) {

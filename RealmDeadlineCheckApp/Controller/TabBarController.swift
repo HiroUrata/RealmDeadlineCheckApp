@@ -18,13 +18,11 @@ class TabBarController: UITabBarController, UIViewControllerTransitioningDelegat
         
         tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .tertiarySystemGroupedBackground
-        tabBar.barTintColor = UIColor(red: 0, green: 76/255, blue: 152/255, alpha: 1.0)
+        tabBar.backgroundColor = UIColor(red: 0, green: 76/255, blue: 152/255, alpha: 1.0)
         
     }
     
     func setnavigationBarItem(){
-        
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 76/255, blue: 152/255, alpha: 1.0)
         
             navigationController?.navigationBar.tintColor = .white 
         navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(systemName: "plus.rectangle.on.rectangle.fill"), style: .done, target: self, action: #selector(moveToSearchView)),UIBarButtonItem(image: UIImage(systemName:  "trash.fill"), style: .done, target: self, action: #selector(deleteRealmData))]

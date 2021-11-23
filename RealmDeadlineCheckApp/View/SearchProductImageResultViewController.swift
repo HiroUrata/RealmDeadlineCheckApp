@@ -20,7 +20,7 @@ class SearchProductImageResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        print("SearchProductImageResultViewController表示")
     }
 
     override func viewDidLayoutSubviews() {

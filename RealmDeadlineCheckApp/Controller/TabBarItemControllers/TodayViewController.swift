@@ -116,6 +116,15 @@ extension TodayViewController:UITableViewDelegate{
             case 1:
                 self.alamofireModel.searchProductImageURL(searchProductName: self.realmCRUDModel.readResultAllDatas[indexPath.row]["allReadProductName"]!)
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    
+                    let modalVC = SearchProductImageResultViewController()
+                    modalVC.apiResultImageURL = self.alamofireModel.productImageURL
+                    modalVC.apiResultItemCaption = self.alamofireModel.productItemCaption
+                    modalVC.modalPresentationStyle = .automatic
+                    self.present(modalVC, animated: true, completion: nil)
+                }
+                
             default:
                 break
             }
